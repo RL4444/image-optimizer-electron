@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline'"></meta>
+    <link rel="stylesheet" href="css/all.min.css"/>
+    <link rel="stylesheet" href="css/materialize.min.css"/>
+    <link rel="stylesheet" href="css/style.css"/>
+    <title>Image Resizer</title>
+</head>
+<body>
+<section class='container center-align' >
+    <h3> 
+        <!-- <i class="fas fa-images"></i> -->
+        Image Optimizer
+    </h3>
+    <!-- <p>Chose the image you want to resize</p> -->
+    <div id='images-job-queue'>
+
+    </div>
+    <form id='image-form'>
+        <div class='drop-zone-wrapper'>
+            <div class="drop-zone" id='drop-zone'>
+                <label aria-label="img" class="drop-zone__prompt" style='height: 200px; width:200px; padding-top: 80px;'>
+                    <p id='drop-text' class='drop-text' style='font-size: 16px;'>Drop file here or click to upload</p>
+                    <input type="file" id="img" style='display:none'>
+                </label>
+            </div>
+        </div>
+
+        <p class="range-filed">
+            <input type="range" name="" min="0" max="100" id="slider">
+        </p>
+        <input type="submit" value="Resize" class="btn-purple">
+    </form>
+    <p style='margin-top: 1em;'>Destination Path</p> <span class="c-white" id="output-path"></span>
+    <script src="js/drag.js"></script>
+    <script src='js/resizeImage.js'></script>
+</section>
+    
+</body>
+</html>
