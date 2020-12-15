@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Comfortaa';
-    src: url('Comfortaa-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+    src: url('Comfortaa-Bold.ttf') format('truetype');
 }
 
 :root {
@@ -8,6 +8,7 @@
     --primary-purple: tomato;
     /* --primary-purple: #9626ff; */
     --primary-white: #f2f2f2;
+    --primary-green: #009578;
 
     --border-radius: 20px;
     --button-padding: 12px 20px;
@@ -30,14 +31,17 @@ body {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
     font-weight: 300;
     color: var(--primary-purple);
 }
 
 p,
 span,
-a {
+a,
+button {
     font-size: 15px;
     font-weight: 300;
     color: var(--primary-white);
@@ -46,6 +50,22 @@ a {
 button:hover,
 input:hover {
     cursor: pointer;
+}
+
+input[type='range'] {
+    width: auto;
+}
+
+.h-100 {
+    height: 100%;
+}
+
+.mt-auto {
+    margin-top: auto;
+}
+
+.mt-2 {
+    margin-top: 2em;
 }
 
 .c-white {
@@ -64,6 +84,7 @@ input:hover {
     text-transform: uppercase;
     transition-duration: 0.2s;
 }
+
 .btn-white {
     margin: auto;
     font-family: Comfortaa, sans-serif;
@@ -83,9 +104,11 @@ input:hover {
 .btn-purple:hover {
     filter: brightness(120%);
 }
+
 .btn-white:hover {
     filter: brightness(120%);
 }
+
 .container {
     width: 400px;
 }
@@ -114,6 +137,7 @@ input:hover {
     justify-content: center;
     width: 100%;
 }
+
 .drop-zone {
     margin: 20px 0;
     max-width: 200px;
@@ -184,7 +208,21 @@ input:hover {
     cursor: pointer;
 }
 
+.quality-and-submit-row {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.range-field {
+    width: 80%;
+    text-align: left;
+}
+
 #images-job-queue {
+    margin-top: 2em;
     display: flex;
     flex-direction: column;
 }
@@ -193,7 +231,43 @@ input:hover {
     display: flex;
     padding: 8px 4px;
     align-items: center;
-    justify-content: space-around;
     color: var(--primary-white);
     font-size: 14px;
+    transition-duration: 0.2s;
+}
+
+.image-job-row:hover {
+    color: white;
+}
+
+.image-job-row.deleted {
+    display: none;
+}
+
+.image-job-row_title {
+    text-align: left;
+    width: 200px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+.image-job-row_slider {
+    text-align: center;
+    width: 150px;
+}
+
+.image-job-row_quality {
+    text-align: right;
+    width: 135px;
+    color: var(--primary-green);
+}
+
+.image-job-row_delete {
+    text-align: right;
+    width: 50px;
+    transition-duration: 0.1s;
+}
+
+.image-job-row_delete:hover {
+    color: rgb(242, 89, 89);
+    cursor: pointer;
 }

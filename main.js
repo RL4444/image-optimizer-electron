@@ -25,7 +25,7 @@ let aboutWindow;
 
 function createMainWindow() {
     mainWindow = new BrowserWindow({
-        width: 500,
+        width: 700,
         height: 600,
         title: 'Image Resizer',
         icon: '🔮', // point to '${__dirname}/assets/icons/<filename>' for custom icon
