@@ -81,7 +81,7 @@ input[type='range'] {
     border: 1px solid transparent;
     outline: none;
     width: 100%;
-    text-transform: uppercase;
+    /* text-transform: uppercase; */
     transition-duration: 0.2s;
 }
 

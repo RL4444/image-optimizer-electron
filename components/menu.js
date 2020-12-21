@@ -10,6 +10,11 @@ const menu = (isMac, isDev, createAboutWindow) => [
                           label: 'About',
                           click: createAboutWindow,
                       },
+                      { role: 'hide' },
+                      { role: 'hideothers' },
+                      { role: 'unhide' },
+                      { type: 'separator' },
+                      { role: 'quit' },
                   ],
               },
           ]

@@ -17,7 +17,7 @@ const imageminPngquant = require('imagemin-pngquant');
 
 const menuComp = require('./components/menu');
 
-// process.env.NODE_ENV = 'development';
+process.env.NODE_ENV = 'production';
 
 const isDev = process.env.NODE_ENV !== 'production' ? true : false;
 const isMac = process.platform === 'darwin' ? true : false;
