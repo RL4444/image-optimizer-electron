@@ -60,10 +60,18 @@ or
 
 ## Creating a .dmg && .exe installation file
 
-### .dmg
+### creating a .dmg
 
 In your project root run this in your bash terminal
 
 `electron-installer-dmg ./release-builds/Web\\ Image\\ Optimizer-darwin-x64/Web\\ Image\\ Optimizer.app web-image-optimizer --out=release-builds --overwrite --icon=app/icons/mac/icon.icns`
 
 or `npm run create-installer-mac`
+
+### creating a windows .exe
+
+This setup requires a few different steps than creating a .dmg. The scripts needed create an executable stored in the `/installers` directory and will handle the build.
+
+You can create a .exe by running
+
+`npm run create-installer-win`

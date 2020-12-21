@@ -1,3 +1,9 @@
+const setupEvents = require('./installers/setupEvents');
+if (setupEvents.handleSquirrelEvent()) {
+    // squirrel event handled and app will exit in 1000ms, so don't do anything else
+    return;
+}
+
 const { app, BrowserWindow, Menu, ipcMain, shell, dialog } = require('electron');
 const path = require('path');
 const os = require('os');
@@ -61,7 +67,6 @@ app.on('ready', () => {
 ipcMain.on('image:minimize', (e, options) => {
     options.dest = path.join(os.homedir(), '/Desktop/minified_images');
     shrinkImage(options);
-    console.log('options ', options);
 });
 
 ipcMain.on('chooseFile', (event, arg) => {
