@@ -7,10 +7,8 @@ const img = document.getElementById('img');
 const dropZoneElement = document.getElementById('drop-zone');
 const imgJobSection = document.getElementById('images-job-queue');
 
-let MUST_CONFIRM_QUALITY = false;
 let IMG_PATH;
 let QUEUE_ID = 1;
-let SELECTED_IMG;
 let imgsToConvert = [];
 
 // TODO: create queue for images to be resized
@@ -18,8 +16,6 @@ let imgsToConvert = [];
 document.getElementById('output-path').innerText = path.join(os.homedir(), '/Desktop/minified_images');
 
 async function addNode(imgPath, name, quality) {
-    MUST_CONFIRM_QUALITY = false;
-
     // we need unique ids to remove nodes successfully
     QUEUE_ID += 1;
     const row = document.createElement('div');
@@ -97,8 +93,6 @@ dropZoneElement.addEventListener('dragover', (e) => {
 });
 
 dropZoneElement.addEventListener('drop', (e) => {
-    MUST_CONFIRM_QUALITY = true;
-
     e.preventDefault();
     e.stopPropagation();
 
@@ -107,7 +101,7 @@ dropZoneElement.addEventListener('drop', (e) => {
     for (const f of e.dataTransfer.files) {
         // Using the path attribute to get absolute file path
         updateThumbnail(dropZoneElement, f.path);
-        addNode(IMG_PATH[0].path, f.name, '50');
+        addNode(f.path, f.name, '50');
     }
     dropZoneElement.classList.remove('drop-zone--over');
 });
@@ -128,8 +122,6 @@ function updateThumbnail(dropZoneElement, file) {
 }
 
 img.addEventListener('change', (e) => {
-    MUST_CONFIRM_QUALITY = true;
-
     if (dropZoneElement.querySelector('.drop-zone__prompt')) {
         dropZoneElement.querySelector('.drop-zone__prompt').remove();
     }

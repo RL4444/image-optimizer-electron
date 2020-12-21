@@ -11,7 +11,7 @@ const imageminPngquant = require('imagemin-pngquant');
 
 const menuComp = require('./components/menu');
 
-process.env.NODE_ENV = 'development';
+// process.env.NODE_ENV = 'development';
 
 const isDev = process.env.NODE_ENV !== 'production' ? true : false;
 const isMac = process.platform === 'darwin' ? true : false;
@@ -27,8 +27,8 @@ function createMainWindow() {
     mainWindow = new BrowserWindow({
         width: 700,
         height: 600,
-        title: 'Image Resizer',
-        icon: '🔮', // point to '${__dirname}/assets/icons/<filename>' for custom icon
+        title: 'Web Image Optimizer',
+        icon: `${__dirname}/assets/icons/icon.png`,
         resizable: isDev,
         backgroundColor: '#fff',
         webPreferences: {
@@ -41,8 +41,8 @@ function createAboutWindow() {
     aboutWindow = new BrowserWindow({
         width: 300,
         height: 300,
-        title: 'Image Resizer',
-        icon: '🔮', // point to '${__dirname}/assets/icons/<filename>' for custom icon
+        title: 'About App',
+        icon: `${__dirname}/assets/icons/icon.png`,
         resizable: false,
         backgroundColor: '#fff',
     });
